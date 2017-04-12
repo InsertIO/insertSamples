@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{4A40F9FB-2E65-4B97-BB5B-D50B3967A86E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+    <Files>
+      <File FileName="../../binding/InsertIO/Transforms/Metadata.xml" Line="22" Column="39" />
+      <File FileName="MainActivity.cs" Line="12" Column="2" />
+      <File FileName="../../binding/InsertIO/Additions/Fixups.cs" Line="6" Column="6" />
+      <File FileName="Properties/AndroidManifest.xml" Line="14" Column="27" />
+      <File FileName="Properties/AssemblyInfo.cs" Line="26" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.InsertIOTest AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.052a55900a5ce03b" />
+</Properties>

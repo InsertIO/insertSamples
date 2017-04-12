@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6FFD047-624D-4DFA-A632-17A4A81EDB14}</ProjectGuid>
+    <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InsertIO</RootNamespace>
+    <AssemblyName>InsertIO</AssemblyName>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidClassParser>class-parse</AndroidClassParser>
+    <AndroidTlsProvider></AndroidTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Square.OkIO">
+      <HintPath>..\..\sample\InsertIOTest\packages\Square.OkIO.1.10.0.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp3">
+      <HintPath>..\..\sample\InsertIOTest\packages\Square.OkHttp3.3.4.1.1\lib\MonoAndroid\Square.OkHttp3.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp3.WS">
+      <HintPath>..\..\sample\InsertIOTest\packages\Square.OkHttp3.WS.3.4.1.1\lib\MonoAndroid\Square.OkHttp3.WS.dll</HintPath>
+    </Reference>
+    <Reference Include="Engine.IO.Client">
+      <HintPath>..\..\sample\InsertIOTest\packages\Engine.IO.Client.0.7.0.1\lib\MonoAndroid\Engine.IO.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Socket.IO.Client">
+      <HintPath>..\..\sample\InsertIOTest\packages\Socket.IO.Client.0.7.0.1\lib\MonoAndroid\Socket.IO.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp">
+      <HintPath>..\..\sample\InsertIOTest\packages\Square.OkHttp.2.7.5.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.Picasso">
+      <HintPath>..\..\sample\InsertIOTest\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleGson">
+      <HintPath>..\..\sample\InsertIOTest\packages\GoogleGson.2.6.2.0\lib\MonoAndroid\GoogleGson.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v13">
+      <HintPath>..\..\sample\InsertIOTest\packages\Xamarin.Android.Support.v13.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v13.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\..\sample\InsertIOTest\packages\Xamarin.Android.Support.v7.RecyclerView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.Palette">
+      <HintPath>..\..\sample\InsertIOTest\packages\Xamarin.Android.Support.v7.Palette.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.Palette.dll</HintPath>
+    </Reference>
+    <Reference Include="NineOldAndroids">
+      <HintPath>..\..\sample\InsertIOTest\packages\NineOldAndroids.2.4.0\lib\MonoAndroid23\NineOldAndroids.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\..\sample\InsertIOTest\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Additions\Fixups.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Additions\AboutAdditions.txt" />
+    <None Include="Jars\AboutJars.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TransformFile Include="Transforms\EnumFields.xml" />
+    <TransformFile Include="Transforms\EnumMethods.xml" />
+    <TransformFile Include="Transforms\Metadata.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\adapter-rxjava-2.1.0.jar">
+      <Link>Jars\adapter-rxjava-2.1.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\commons-lang3-3.4.jar">
+      <Link>Jars\commons-lang3-3.4.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\dagger-2.8.jar">
+      <Link>Jars\dagger-2.8.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\jose4j-0.4.4.jar">
+      <Link>Jars\jose4j-0.4.4.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\retrofit-2.1.0.jar">
+      <Link>Jars\retrofit-2.1.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\rxjava-1.1.1.jar">
+      <Link>Jars\rxjava-1.1.1.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\slf4j-api-1.7.6.jar">
+      <Link>Jars\slf4j-api-1.7.6.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\timber-3.0.1.jar">
+      <Link>Jars\timber-3.0.1.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\YouTubeAndroidPlayerApi-0.1.jar">
+      <Link>Jars\YouTubeAndroidPlayerApi-0.1.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\android-iconify-2.2.2.jar">
+      <Link>Jars\android-iconify-2.2.2.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\gifimageview-2.0.0.jar">
+      <Link>Jars\gifimageview-2.0.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\library-1.0.2.jar">
+      <Link>Jars\library-1.0.2.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\rxandroid-1.1.0.jar">
+      <Link>Jars\rxandroid-1.1.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\rxbinding-0.4.0.jar">
+      <Link>Jars\rxbinding-0.4.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\aars\rxlifecycle-0.5.0.jar">
+      <Link>Jars\rxlifecycle-0.5.0.jar</Link>
+    </EmbeddedReferenceJar>
+    <EmbeddedReferenceJar Include="..\..\extern\jars\javax.inject-1.jar">
+      <Link>Jars\javax.inject-1.jar</Link>
+    </EmbeddedReferenceJar>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="..\..\extern\insertIO-1.41.41.1790.aar">
+      <Link>Jars\insertIO-1.41.41.1790.aar</Link>
+    </LibraryProjectZip>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+</Project>

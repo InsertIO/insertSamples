@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+
+	<!-- the mozilla bits are internal-only -->
+	<remove-node path="/api/package[starts-with(@name,'org.mozilla.javascript')]" />
+
+	<attr path="/api/package[@name='sdk.insert.io.network']/class[@name='SetupAction']" name="managedName">SetupActions</attr>
+	<attr path="/api/package[@name='sdk.insert.io.activities']/class[@name='InsertGateActivity']/field[@name='INSERT_GATE_ACTIVITY']" name="managedName">InsertGateActivityKey</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions']/class[@name='InsertAction']/method[@name='compareTo']/parameter[1]" name="managedType">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions']/class[@name='InsertCommandAction.InsertCommandActionDeserializer']/method[@name='deserialize']" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions']/class[@name='InsertCommandEventType.InsertCommandEventTypeDeserializer']/method[@name='deserialize']" name="managedReturn">Java.Lang.Object</attr>
+
+	<attr path="/api/package[@name='sdk.insert.io.actions']/class[@name='InsertsChooser.InsertPriorityComparator']/method[@name='compare']/parameter[1]" name="managedType">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions']/class[@name='InsertsChooser.InsertPriorityComparator']/method[@name='compare']/parameter[2]" name="managedType">Java.Lang.Object</attr>
+
+	<!-- remove obfuscated methods -->
+	<remove-node path="/api/package/class/method[string-length(@name)=1]" />
+	<remove-node path="/api/package/class/field[string-length(@name)=1]" />
+	<remove-node path="/api/package/interface/method[string-length(@name)=1]" />
+		
+	<!-- remove warnings about protected members in sealed types -->
+	<attr path="/api/package/class[@final='true']/method[@visibility='protected']" name="visibility">internal</attr>
+
+	<!-- Rename those packages to be more .NET friendly -->
+	<attr path="/api/package[@name='sdk.insert.io']" name="managedName">Insert.IO</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions']" name="managedName">Insert.IO.Actions</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions.configurations']" name="managedName">Insert.IO.Actions.Configurations</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions.handlers']" name="managedName">Insert.IO.Actions.Handlers</attr>
+	<attr path="/api/package[@name='sdk.insert.io.actions.visual_manipulation']" name="managedName">Insert.IO.Actions.VisualManipulation</attr>
+	<attr path="/api/package[@name='sdk.insert.io.activities']" name="managedName">Insert.IO.Activities</attr>
+	<attr path="/api/package[@name='sdk.insert.io.analytics']" name="managedName">Insert.IO.Analytics</attr>
+	<attr path="/api/package[@name='sdk.insert.io.animations']" name="managedName">Insert.IO.Animations</attr>
+	<attr path="/api/package[@name='sdk.insert.io.cache']" name="managedName">Insert.IO.Cache</attr>
+	<attr path="/api/package[@name='sdk.insert.io.dagger.components']" name="managedName">Insert.IO.Dagger.Components</attr>
+	<attr path="/api/package[@name='sdk.insert.io.dagger.modules']" name="managedName">Insert.IO.Dagger.Modules</attr>
+	<attr path="/api/package[@name='sdk.insert.io.data.structures']" name="managedName">Insert.IO.Data.Structures</attr>
+	<attr path="/api/package[@name='sdk.insert.io.dialogs']" name="managedName">Insert.IO.Dialogs</attr>
+	<attr path="/api/package[@name='sdk.insert.io.events']" name="managedName">Insert.IO.Events</attr>
+	<attr path="/api/package[@name='sdk.insert.io.exceptions']" name="managedName">Insert.IO.Exceptions</attr>
+	<attr path="/api/package[@name='sdk.insert.io.handlers']" name="managedName">Insert.IO.Handlers</attr>
+	<attr path="/api/package[@name='sdk.insert.io.information.collectors']" name="managedName">Insert.IO.Information.Collectors</attr>
+	<attr path="/api/package[@name='sdk.insert.io.information.collectors.application']" name="managedName">Insert.IO.Information.Collectors.Application</attr>
+	<attr path="/api/package[@name='sdk.insert.io.information.collectors.device']" name="managedName">Insert.IO.Information.Collectors.Device</attr>
+	<attr path="/api/package[@name='sdk.insert.io.intelligence']" name="managedName">Insert.IO.Intelligence</attr>
+	<attr path="/api/package[@name='sdk.insert.io.listeners']" name="managedName">Insert.IO.Listeners</attr>
+	<attr path="/api/package[@name='sdk.insert.io.listeners.views']" name="managedName">Insert.IO.Listeners.Views</attr>
+	<attr path="/api/package[@name='sdk.insert.io.logging']" name="managedName">Insert.IO.Logging</attr>
+	<attr path="/api/package[@name='sdk.insert.io.logging.profiling']" name="managedName">Insert.IO.Logging.Profiling</attr>
+	<attr path="/api/package[@name='sdk.insert.io.models']" name="managedName">Insert.IO.Models</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network']" name="managedName">Insert.IO.Network</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.interfaces']" name="managedName">Insert.IO.Network.Interfaces</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.killswitch']" name="managedName">Insert.IO.Network.Killswitch</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.responses']" name="managedName">Insert.IO.Network.Responses</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.responses.validators']" name="managedName">Insert.IO.Network.Validators</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio']" name="managedName">Insert.IO.Network.SocketIO</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio.actions']" name="managedName">Insert.IO.Network.SocketIO.Actions</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio.configuration']" name="managedName">Insert.IO.Network.SocketIO.Configuration</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio.listeners']" name="managedName">Insert.IO.Network.SocketIO.Listeners</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio.state.machines']" name="managedName">Insert.IO.Network.SocketIO.State.Machines</attr>
+	<attr path="/api/package[@name='sdk.insert.io.network.socketio.utilities']" name="managedName">Insert.IO.Network.SocketIO.Utilities</attr>
+	<attr path="/api/package[@name='sdk.insert.io.sdk.manager']" name="managedName">Insert.IO.Sdk.Manager</attr>
+	<attr path="/api/package[@name='sdk.insert.io.utilities']" name="managedName">Insert.IO.Utilities</attr>
+	<attr path="/api/package[@name='sdk.insert.io.utilities.script']" name="managedName">Insert.IO.Utilities.Script</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views']" name="managedName">Insert.IO.Views</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.custom']" name="managedName">Insert.IO.Views.Custom</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.drawables']" name="managedName">Insert.IO.Views.Drawables</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.inserts']" name="managedName">Insert.IO.Views.Inserts</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.listener']" name="managedName">Insert.IO.Views.Listener</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.pager']" name="managedName">Insert.IO.Views.Pager</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.third_party']" name="managedName">Insert.IO.Views.ThirdParty</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.video']" name="managedName">Insert.IO.Views.Video</attr>
+	<attr path="/api/package[@name='sdk.insert.io.views.watcher']" name="managedName">Insert.IO.Views.Watcher</attr>
+
+</metadata>
